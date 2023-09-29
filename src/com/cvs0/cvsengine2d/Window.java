@@ -41,6 +41,7 @@ public class Window {
 	
 	public void update() {
 		graphics.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(), null);
+		bs.show();
 	}
 }
 
