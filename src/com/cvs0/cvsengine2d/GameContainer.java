@@ -4,6 +4,7 @@ public class GameContainer implements Runnable {
 	
 	private Thread thread;
 	private Window window;
+	private Renderer renderer;
 	
 	private boolean running = false;
 	private static final double UPDATE_CAP = 1.0 / 60.0;
@@ -18,6 +19,8 @@ public class GameContainer implements Runnable {
 	
 	public void start() {
 		window = new Window(this);
+		renderer = new Renderer(this);
+		
 		thread = new Thread(this);
 		thread.run();
 	}
@@ -63,6 +66,7 @@ public class GameContainer implements Runnable {
 			}
 			
 			if(render) {
+				renderer.clear();
 				//TODO: render game
 				window.update();
 				frames++;
@@ -121,5 +125,9 @@ public class GameContainer implements Runnable {
 
 	public static String getVersion() {
 		return VERSION;
+	}
+
+	public Window getWindow() {
+		return window;
 	}
 }
