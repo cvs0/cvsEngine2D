@@ -32,6 +32,8 @@ public class GameContainer implements Runnable {
 		int fps = 0;
 		
 		while(running) {
+			render = false;
+			
 			firstTime = System.nanoTime() / 1000000000.0;
 			passedTime = firstTime - lastTime;
 			lastTime = firstTime;
@@ -74,5 +76,6 @@ public class GameContainer implements Runnable {
 	
 	public static void main(String args[]) {
 		GameContainer gc = new GameContainer();
+		gc.start();
 	}
 }
