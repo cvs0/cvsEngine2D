@@ -1,2 +1,5 @@
 # cvsEngine2D
-The 2D version of cvsEngine
+
+A fast, and reliable 2D Game Engine built on OpenGL.
+
+### WIP
